@@ -31,7 +31,7 @@ def game():
         elif letter in word_chars:
             print("Буква %s угадана!" % letter)
             list_letters.remove(letter)
-            for i in replace_letter(letter):
+            for i in replace_letter(WORD, letter):
                 word_list[i] = letter
         else:
             print("Буквы %s нет в загаданном слове! :(" % letter)
@@ -41,8 +41,8 @@ def game():
     return False
 
 
-def replace_letter(letter):
-    return [i for i, l in enumerate(WORD) if l == letter]
+def replace_letter(game_word, letter):
+    return [i for i, l in enumerate(game_word) if l == letter]
 
 
 def main():
